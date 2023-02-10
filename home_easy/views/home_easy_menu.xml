@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="home_easy_menu_root" name="Home Easy" >
+        <menuitem id="home_easy_first_level_menu" name="Service Provider">
+            <menuitem id="service_provider_menu_action" name="Service Provider" action="service_provider_actions"/>
+        </menuitem>
+    </menuitem>
+</odoo>

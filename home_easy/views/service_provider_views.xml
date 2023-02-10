@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Display service provider -->
+    <record id="service_provider_actions" model="ir.actions.act_window">
+        <field name="name">Service Provider</field>
+        <field name= "res_model">service.provider</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Service Provider
+            </p>            
+        </field>
+    </record>
+
+    <!-- tree view -->
+    <record id="service_provider_view_tree" model="ir.ui.view">
+        <field name="name">service.provider.tree</field>
+        <field name="model">service.provider</field>
+        <field name="arch" type="xml">
+            <tree string="Service Provider">
+                <field name="name"></field>
+                <field name="availability"></field>
+                <field name="service_type"></field>
+                <field name="experience"></field>
+                <field name="phone_number"></field>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="service_provider_view_form" model="ir.ui.view">
+        <field name="name">service.provider.form</field>
+        <field name="model">service.provider</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <!-- <label for="profile_picture" string="axy" position="attributes" class="oe_right oe_highlight" /><br></br> -->
+                        <field name="profile_picture" widget="image" position="attributes" class="oe_right oe_highlight" ></field>
+                    
+                    <lable for="name"><b>Service Provider Name</b></lable>
+                        <h1> <field name="name"/></h1>
+                    <group>
+                        <group >
+                            <field name="availability"></field>
+                            <field name="service_type"></field>
+                            <field name="experience"></field>              
+                        </group>
+                        <group >              
+                            <field name="phone_number"></field>
+                            <field name="email"></field>
+                        </group>
+                            
+                    </group>
+                    <notebook>
+                        <page string="Personal Information">
+                            <group >
+                                <field name="age"></field>
+                                <field name="qualifications"></field>
+                                <field name="skills"></field>
+                                <field name="maratial_status"></field>
+                                <field name="address"></field>
+                                <field name="postcode"></field>
+                            </group>
+                        </page>
+
+                        <page string="Description">
+                            <group >
+                                <field name="description"></field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="service_provider_view_search" model="ir.ui.view">
+        <field name="name">service.provider.search</field>
+        <field name="model">service.provider</field>
+        <field name="arch" type="xml">
+            <search string="Service_Provider">
+                <field name="name"></field>
+                <field name="qualifications"></field>
+                <field name="skills"></field>
+                <field name="maratial_status"></field>
+                <field name="availability"></field>
+                <field name="service_type"></field>
+                <field name="experience"></field> 
+                <field name="postcode"></field>
+                <group expand="1" string="Group By">
+                    <filter name="postcode" string="Postcode" context="{'group_by': 'postcode'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

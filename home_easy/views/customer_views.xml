@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Customer actioin -->
+    <record id="customer_action" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="res_model">customer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Customer
+            </p>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="customer_view_tree" model="ir.ui.view">
+        <field name="name">customer.tree</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="phone_number" />
+                <field name="email" />
+                <field name="postcode" />
+                <field name="service_preferences" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="customer_view_form" model="ir.ui.view">
+        <field name="name">customer.form</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <field name="profile_picture" widget="image" position="attributes" class="oe_right oe_highlight" ></field>
+                    
+                    <lable for="name"><b>Customer Name</b></lable>
+                        <h1> <field name="name"/></h1>                    
+                    <group>
+                        <group >
+                            <field name="service_preferences" widget="many2many_tags"/>
+                            <field name="address" />
+                            <field name="postcode" />
+                        </group>
+                        <group>
+                            <field name="phone_number" />
+                            <field name="email" />
+                            <field name="age" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="customer_view_search" model="ir.ui.view">
+        <field name="name">customer.search</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name" />
+                
+            </search>
+        </field>
+    </record>
+</odoo>

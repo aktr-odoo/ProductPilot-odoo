@@ -29,12 +29,13 @@ class ServiceProvider(models.Model):
         default='single'
         )
     profile_picture = fields.Image(required=True,copy=False)
-    service_type = fields.Selection([
-        ('maid','Miad'),
-        ('baby_sitter','Baby Sitting'),
-        ('elderly_sitting','Elderly Sitting')
-    ])
-    postcode = fields.Char()
+    # service_type = fields.Selection([
+    #     ('maid','Miad'),
+    #     ('baby_sitter','Baby Sitting'),
+    #     ('elderly_sitting','Elderly Sitting')
+    # ])
+    service_type = fields.Many2many("service.type",required=True)
+    postcode = fields.Char(required=True)
 
     # ratings = fields.Float()
     # price = fields.Float(required=True) 

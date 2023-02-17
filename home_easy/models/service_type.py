@@ -4,4 +4,4 @@ class SerivceType(models.Model):
     _name = "service.type"
     _description = "It's a service type"
 
-    name = fields.Char(required=True)
+    name = fields.Char()

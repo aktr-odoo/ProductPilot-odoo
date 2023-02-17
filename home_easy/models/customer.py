@@ -4,14 +4,14 @@ class Customer(models.Model):
     _name = "customer"
     _description = "It is a service provider module"
 
-    name = fields.Char(required=True)
-    age = fields.Integer(required=True)
-    # qualifications = fields.Char()
-    # experience = fields.Float(required=True)
-    phone_number = fields.Integer(required=True,copy=False)
+    name = fields.Char()
+    age = fields.Integer()
+    phone_number = fields.Integer(copy=False)
     email = fields.Char()
     address = fields.Char()
-    profile_picture = fields.Image(required=True,copy=False)
-    service_preferences = fields.Many2many("service.type",required=True)
-    postcode =  fields.Char(required=True)
+    profile_picture = fields.Image(copy=False)
+    postcode =  fields.Char()
+    
+    # Relational Fields
+    service_preferences_ids = fields.Many2many("service.type",)
     # ratings = fields.Float()

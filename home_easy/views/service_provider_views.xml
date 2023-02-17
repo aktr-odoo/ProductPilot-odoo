@@ -20,7 +20,7 @@
             <tree string="Service Provider">
                 <field name="name"></field>
                 <field name="availability"></field>
-                <field name="service_type" ></field>
+                <field name="service_type_ids" ></field>
                 <field name="experience"></field>
                 <field name="phone_number"></field>
             </tree>
@@ -39,14 +39,15 @@
                     
                     <lable for="name"><b>Service Provider Name</b></lable>
                         <h1> <field name="name"/></h1>
+                        <field name="service_type_ids" widget="many2many_tags"></field>
                     <group>
                         <group >
                             <field name="availability"></field>
-                            <field name="service_type" widget="many2many_tags"></field>
                             <field name="experience"></field>   
                             <field name="postcode"></field>
                         </group>
-                        <group >              
+                        <group >          
+                            <field name="customer_ids" widget="many2many_tags"  />    
                             <field name="phone_number"></field>
                             <field name="email"></field>
                         </group>
@@ -62,7 +63,9 @@
                                 <field name="address"></field>
                             </group>
                         </page>
-
+                        <page string="Service Request">
+                            <field name="request_ids" />
+                        </page>
                         <page string="Description">
                             <group >
                                 <field name="description"></field>
@@ -86,7 +89,7 @@
                 <field name="maratial_status"></field>
                 <field name="availability"></field>
                 <group expand="1" string="Group By">
-                    <filter name="service_type" string="service_type" context="{'group_by': 'service_type'}" />
+                    <filter name="service_type_ids" string="service_type" context="{'group_by': 'service_type_ids'}" />
                 </group>
                 <field name="experience"></field> 
                 <field name="postcode"></field>

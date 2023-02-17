@@ -4,12 +4,12 @@ class ServiceProvider(models.Model):
     _name = "service.provider"
     _description = "It is a service provider module"
 
-    name = fields.Char(required=True)
-    age = fields.Integer(required=True)
+    name = fields.Char()
+    age = fields.Integer()
     qualifications = fields.Char()
-    experience = fields.Float(required=True)
+    experience = fields.Float()
     skills = fields.Char()
-    phone_number = fields.Integer(required=True,copy=False)
+    phone_number = fields.Integer(copy=False)
     email = fields.Char()
     address = fields.Char()
     availability = fields.Selection([
@@ -28,14 +28,12 @@ class ServiceProvider(models.Model):
         ],
         default='single'
         )
-    profile_picture = fields.Image(required=True,copy=False)
-    # service_type = fields.Selection([
-    #     ('maid','Miad'),
-    #     ('baby_sitter','Baby Sitting'),
-    #     ('elderly_sitting','Elderly Sitting')
-    # ])
-    service_type = fields.Many2many("service.type",required=True)
-    postcode = fields.Char(required=True)
+    profile_picture = fields.Image(copy=False)
+    postcode = fields.Char()
 
+    # Relational Fields
+    service_type_ids = fields.Many2many("service.type")
+    customer_ids = fields.Many2many("customer",string="Assigned to")
+    request_ids = fields.One2many("service.provider.request","service_provider_id")
     # ratings = fields.Float()
-    # price = fields.Float(required=True) 
+    # price = fields.Float() 

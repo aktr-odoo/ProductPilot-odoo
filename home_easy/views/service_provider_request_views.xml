@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="service_provider_request_view_tree" model="ir.ui.view">
+        <field name="name">service.provider.request.tree</field>
+        <field name="model">service.provider.request</field>
+        <field name="arch" type="xml">
+            <tree string="" editable="bottom">
+                <field name="customer_id" />
+                <field name="service_type_ids" widget="many2many_tags"/>
+                <button name="action_set_offer_accepted" type="object" icon="fa-check" title = " "/>
+                <button name="action_set_offer_refused" type="object" icon="fa-times" title = " "/>
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

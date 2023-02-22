@@ -3,6 +3,10 @@ from odoo import models,fields,api
 class ServiceProviderRequest(models.Model):
     _name = "service.provider.request"
     _description = "It's a service provider model"
+    # not working, doubt
+    # _sql_constraints = [
+    #     ('check_postcode','CHECK(postcode == service_provider_id.postcode)','The service provider which you are requesting is not available at your Postcode')
+    #     ]
 
     status  = fields.Selection([
         ('accepted','Accepted'),
@@ -10,6 +14,8 @@ class ServiceProviderRequest(models.Model):
     ],
     copy=False,
     )
+    postcode = fields.Char()
+     
     # Relational Fields
     service_provider_id = fields.Many2one("service.provider",)
     customer_id = fields.Many2one("customer",)
@@ -25,3 +31,6 @@ class ServiceProviderRequest(models.Model):
         for record in self:
             record.status = "refused"
         return True
+
+
+        

@@ -18,7 +18,7 @@
         <field name="name">customer.tree</field>
         <field name="model">customer</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree string="" default_order = "name desc">
                 <field name="name" />
                 <field name="phone_number" />
                 <field name="email" />

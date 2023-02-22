@@ -11,6 +11,7 @@ class Customer(models.Model):
     address = fields.Char()
     profile_picture = fields.Image(copy=False)
     postcode =  fields.Char()
+    color = fields.Integer()
     
     # Relational Fields
     service_preferences_ids = fields.Many2many("service.type",)

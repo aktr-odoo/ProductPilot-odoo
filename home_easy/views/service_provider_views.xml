@@ -39,7 +39,7 @@
                     
                     <lable for="name"><b>Service Provider Name</b></lable>
                         <h1> <field name="name"/></h1>
-                        <field name="service_type_ids" widget="many2many_tags"></field>
+                        <field name="service_type_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True,'color_field': 'color'}" ></field>
                     <group>
                         <group >
                             <field name="availability"></field>
@@ -47,7 +47,7 @@
                             <field name="postcode"></field>
                         </group>
                         <group >          
-                            <field name="customer_ids" widget="many2many_tags"  />    
+                            <field name="customer_ids" widget="many2many_tags"  options="{'color_field': 'color'}"/>    
                             <field name="phone_number"></field>
                             <field name="email"></field>
                         </group>

@@ -8,3 +8,4 @@ class SerivceType(models.Model):
     name = fields.Char()
     color = fields.Integer()
     sequence = fields.Integer('Sequence',default="1")
+    provider_ids = fields.One2many("service.provider","service_type_ids")

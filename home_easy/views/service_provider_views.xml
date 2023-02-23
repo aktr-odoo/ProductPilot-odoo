@@ -64,7 +64,7 @@
                             </group>
                         </page>
                         <page string="Service Request">
-                            <field name="request_ids" />
+                            <field name="request_ids"/>
                         </page>
                         <page string="Description">
                             <group >

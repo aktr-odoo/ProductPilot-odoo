@@ -10,12 +10,11 @@ class ServiceProviderRequest(models.Model):
     ],
     copy=False,
     )
-    postcode = fields.Char()    
-     
     # Relational Fields
     service_provider_id = fields.Many2one("service.provider")
+    postcode = fields.Char(related='service_provider_id.postcode')
     customer_id = fields.Many2one("customer")
-    service_type_ids = fields.Many2many("service.type")
+    service_type_ids = fields.Many2many("service.type")                    
 
     def action_set_offer_accepted(self):
         for record in self:

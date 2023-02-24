@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields,api
 
 class ServiceProvider(models.Model):
     _name = "service.provider"
@@ -20,7 +20,7 @@ class ServiceProvider(models.Model):
         ('available','Available'),
         ('not available','Not available')
     ],
-    default='available'
+    default='available',
     )
     description = fields.Char()
     maratial_status = fields.Selection([
@@ -35,6 +35,7 @@ class ServiceProvider(models.Model):
     profile_picture = fields.Image(copy=False)
     postcode = fields.Char()
     color = fields.Integer()
+    max_service = fields.Integer()
 
     # Relational Fields
     service_type_ids = fields.Many2many("service.type")

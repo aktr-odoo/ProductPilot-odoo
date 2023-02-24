@@ -38,19 +38,26 @@
                     <field name="profile_picture" widget="image" position="attributes" class="oe_right oe_highlight" ></field>
                     
                     <lable for="name"><b>Customer Name</b></lable>
-                        <h1> <field name="name"/></h1>                    
-                    <group>
+                        <h1> <field name="name"/></h1>      
+                        <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                    <b>              
                         <group >
-                            <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
-                            <field name="address" />
-                            <field name="postcode" />
+                            <group>
+                                        <field name="street" />
+                                        <field name="street2" />
+                                        <field name="postcode" />
+                                        <field name="city" />
+                                        <field name="state" />
+                                        <field name="country" />
+                                        <field name="country_code" />
+                            </group>
+                            <group>
+                                <field name="phone_number" />
+                                <field name="email" />
+                                <field name="age" />
+                            </group>
                         </group>
-                        <group>
-                            <field name="phone_number" />
-                            <field name="email" />
-                            <field name="age" />
-                        </group>
-                    </group>
+                    </b>
                 </sheet>
             </form>
         </field>

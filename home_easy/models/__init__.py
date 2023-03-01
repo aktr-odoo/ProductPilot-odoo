@@ -1,1 +1,1 @@
-from . import service_provider,customer,service_type,servide_provider_request
+from . import customer,service_provider,service_type,servide_provider_request

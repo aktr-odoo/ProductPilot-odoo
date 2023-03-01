@@ -2,6 +2,7 @@
     'name' : 'Home Easy',
     'installable': True,
     'application': True,
+    'auto_install': True,
     'depends': ['base'],
     'license' : 'LGPL-3',
     'data' : [

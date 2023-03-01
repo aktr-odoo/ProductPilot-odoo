@@ -7,6 +7,7 @@ class ServiceProvider(models.Model):
         ("check_age","CHECK(age>18)","Your age must be grater to 18"),  
         ]
     _order = "name desc"
+    # _inherits = {'customer':'customer_ids'}
 
     name = fields.Char()
     age = fields.Integer(default=19)

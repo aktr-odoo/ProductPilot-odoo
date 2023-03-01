@@ -12,7 +12,7 @@ class Customer(models.Model):
     profile_picture = fields.Image(copy=False)
     postcode =  fields.Char()
     color = fields.Integer()
-
+    x = fields.Integer()
     # Address Fields
     street = fields.Char(related="name.street")
     street2 = fields.Char(related="name.street2")

@@ -14,8 +14,16 @@ class ServiceProviderRequest(models.Model):
     service_provider_id = fields.Many2one("service.provider")
     postcode = fields.Char(related='service_provider_id.postcode')
     customer_id = fields.Many2one("customer")
-    service_type_ids = fields.Many2many("service.type")                    
+    service_type_ids = fields.Many2many("service.type")     
+    seq_no = fields.Char(string="Task Reference",required=True,readonly=True,default = lambda self:('New'))               
 
+    # Private Methods
+    @api.model
+    def create(self, vals):
+        vals['seq_no'] = self.env['ir.sequence'].next_by_code('service.provider.request')
+        return super(ServiceProviderRequest,self).create(vals)
+
+    # Public methods
     def action_set_offer_accepted(self):
         for record in self:
             if record.service_provider_id.postcode == record.postcode and (record.service_type_ids in list(record.service_provider_id.service_type_ids)) :

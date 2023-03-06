@@ -8,7 +8,7 @@
             <tree string="" editable="bottom">
                 <field name="seq_no"/>
                 <field name="customer_id" />
-                <field name="service_type_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                <!-- <field name="service_type_ids" widget="many2many_tags" options="{'no_create': True}"/> -->
                 <field name="postcode" />
                 <button name="action_set_offer_accepted" type="object" icon="fa-check" title = " " attrs="{'invisible':[('status','in',['accepted','refused'])]}"/>
                 <button name="action_set_offer_refused" type="object" icon="fa-times" title = " " attrs="{'invisible':[('status','in',['accepted','refused'])]}"/>

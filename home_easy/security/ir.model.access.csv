@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 home_easy.access_service_provider,access_service_provider,home_easy.model_service_provider,base.group_user,1,1,1,1
 home_easy.access_customer,access_customer,home_easy.model_customer,base.group_user,1,1,1,1
-home_easy.access_service_type,access_service_type,home_easy.model_service_type,base.group_user,1,1,1,1
 home_easy.access_service_provider_request,access_service_provider_request,home_easy.model_service_provider_request,base.group_user,1,1,1,1
+home_easy.access_service_type_maid,access_service_type_maid,home_easy.model_service_type_maid,base.group_user,1,1,1,1
+home_easy.access_service_type_baby_sitting,access_service_type_baby_sitting,home_easy.model_service_type_baby_sitting,base.group_user,1,1,1,1
+home_easy.access_service_type_elderly_sitting,access_service_type_elderly_sitting,home_easy.model_service_type_elderly_sitting,base.group_user,1,1,1,1

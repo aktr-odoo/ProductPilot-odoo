@@ -1,8 +1,8 @@
 from odoo import models,fields
 
-class SerivceType(models.Model):
-    _name = "service.type"
-    _description = "It's a service type"
+class SerivceTypeMaid(models.Model):
+    _name = "service.type.maid"
+    _description = "It's a maid service type"
     _order = "sequence desc"
 
     name = fields.Char()

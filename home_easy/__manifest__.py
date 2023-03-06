@@ -8,7 +8,9 @@
     'data' : [
     'security/ir.model.access.csv',
     'views/service_provider_views.xml',
-    'views/service_type_views.xml',
+    'views/service_type_maid_views.xml',
+    'views/service_type_baby_sitting_views.xml',
+    'views/service_type_elderly_sitting_views.xml',
     'views/customer_views.xml',
     'views/service_provider_request_views.xml',
     'views/home_easy_menu.xml',

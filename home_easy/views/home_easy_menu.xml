@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <menuitem id="home_easy_menu_root" name="Home Easy" >
-        <menuitem id="home_easy_first_level_menu" name="Service Provider">
+        <menuitem id="home_easy_first_level_menu" name="Advertisements">
             <menuitem id="service_provider_menu_action" name="Service Provider" action="service_provider_actions"/>
         </menuitem>
+
         <menuitem id="home_easy_second_level_menu" name="Customer">
             <menuitem id="customer_menu_action" name="Customer" action="customer_action"/>
         </menuitem>
-        <menuitem id="home_easy_third_level_menu" name="Settings">
-            <menuitem id="service_type_menu_action" name="Service Type" action="service_type_action"/>
+
+        <menuitem id="home_easy_third_level_menu" name="Service Types">
+            <menuitem id="service_type_maid_menu_action" name="Maid" action="service_type_maid_action"/>
+            <menuitem id="service_type_baby_sitting_menu_action" name="Baby Sitting" action="service_type_baby_sitting_action"/>
+            <menuitem id="service_type_elderly_sitting_menu_action" name="Elderly Sitting" action="service_type_elderly_sitting_action"/>
         </menuitem>
+
     </menuitem>
 </odoo>
+    

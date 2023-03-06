@@ -23,7 +23,7 @@
                 <field name="phone_number" />
                 <field name="email" />
                 <field name="postcode" />
-                <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                <!-- <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/> -->
             </tree>
         </field>
     </record>
@@ -39,7 +39,7 @@
                     
                     <lable for="name"><b>Customer Name</b></lable>
                         <h1> <field name="name"/></h1>      
-                        <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                        <!-- <field name="service_preferences_ids" widget="many2many_tags" options="{'color_field':'color'}"/> -->
                     <b>              
                         <group >
                             <group>

@@ -14,7 +14,7 @@ class ServiceProviderRequest(models.Model):
     service_provider_id = fields.Many2one("service.provider")
     postcode = fields.Char(related='service_provider_id.postcode')
     customer_id = fields.Many2one("customer")
-    service_type_ids = fields.Many2many("service.type")     
+    # service_type_ids = fields.Many2many("service.type")     
     seq_no = fields.Char(string="Task Reference",required=True,readonly=True,default = lambda self:('New'))               
 
     # Private Methods

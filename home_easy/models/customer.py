@@ -23,6 +23,6 @@ class Customer(models.Model):
     country_code = fields.Char(related="name.country_code")
     
     # Relational Fields
-    service_preferences_ids = fields.Many2many("service.type")
+    # service_preferences_ids = fields.Many2many("service.type")
     service_request_ids = fields.One2many("service.provider.request","customer_id")
     # ratings = fields.Float()

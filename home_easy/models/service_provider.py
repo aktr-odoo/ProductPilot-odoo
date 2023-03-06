@@ -36,10 +36,16 @@ class ServiceProvider(models.Model):
     profile_picture = fields.Image(copy=False)
     postcode = fields.Char()
     color = fields.Integer()
+    maid = fields.Boolean(default=False)
+    baby_sitting = fields.Boolean(default=False)
+    elderly_sitting = fields.Boolean(default=False)
     max_service = fields.Integer()
 
     # Relational Fields
-    service_type_ids = fields.Many2many("service.type")
+    # service_type_ids = fields.Many2many("service.type")
+    service_maid_ids = fields.Many2many("service.type.maid")
+    service_baby_sitting_ids = fields.Many2many("service.type.baby.sitting")
+    service_elderly_sitting_ids = fields.Many2many("service.type.elderly.sitting")
     customer_ids = fields.Many2many("customer",string="Assigned to")
     request_ids = fields.One2many("service.provider.request","service_provider_id")
 

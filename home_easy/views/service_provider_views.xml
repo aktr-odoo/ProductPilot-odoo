@@ -20,7 +20,7 @@
             <tree string="Service Provider">
                 <field name="name"></field>
                 <field name="availability"></field>
-                <field name="service_type_ids" widget="many2many_tags" options="{'color_field':'color'}"></field>
+                <!-- <field name="service_type_ids" widget="many2many_tags" options="{'color_field':'color'}"></field> -->
                 <field name="experience"></field>
                 <field name="phone_number"></field>
             </tree>
@@ -39,9 +39,9 @@
                     
                     <lable for="name"><b>Service Provider Name</b></lable>
                         <h1> <field name="name"/></h1>
-                        <field name="service_type_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True,'color_field': 'color'}" ></field>
-                    <group>
-                        <group >
+                        <!-- <field name="service_type_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True,'color_field': 'color'}" ></field> -->
+                    <group >
+                        <group>
                             <field name="availability"></field>
                             <field name="max_service"></field>
                             <field name="experience"></field>   
@@ -55,6 +55,16 @@
                             
                     </group>
                     <notebook>
+                        <page string="Services">
+                            <group>
+                                <field name="maid" />
+                                <field name="service_maid_ids" widget="many2many_tags"  options="{'color_field': 'color'}" attrs="{'invisible': [('maid','=',False)]}"/>
+                                <field name="baby_sitting" />
+                                <field name="service_baby_sitting_ids" widget="many2many_tags"  options="{'color_field': 'color'}" attrs="{'invisible': [('baby_sitting','=',False)]}"/>
+                                <field name="elderly_sitting" />
+                                <field name="service_elderly_sitting_ids" widget="many2many_tags"  options="{'color_field': 'color'}" attrs="{'invisible': [('elderly_sitting','=',False)]}"/>
+                            </group>
+                        </page>
                         <page string="Personal Information">
                             <group >
                                 <field name="age"></field>
@@ -90,7 +100,7 @@
                 <field name="maratial_status"></field>
                 <field name="availability"></field>
                 <group expand="1" string="Group By">
-                    <filter name="service_type_ids" string="service_type" context="{'group_by': 'service_type_ids'}" />
+                    <!-- <filter name="service_type_ids" string="service_type" context="{'group_by': 'service_type_ids'}" /> -->
                 </group>
                 <field name="experience"></field> 
                 <field name="postcode"></field>
